@@ -16,16 +16,26 @@ Setup
 Startup
 -------
 
+This command starts the server in foreground listening on any network:
+
     rails s -b ::
-
-Reset Substitutions
--------------------
-
-    rake substitutions:reset
 
 Starting On Boot
 ----------------
 
 Paste the following line at the end of `/etc/rc.local`:
 
-    su <user> -c "cd <app-dir> && rails s -b :: -d"
+    su <user> -c "cd <app-dir> && rake server:start"
+
+Rake Tasks
+----------
+
+### Reset Substitutions
+
+    rake substitutions:reset
+
+### Background WEBrick Server Management
+
+	rake server:start
+	rake server:stop
+	rake server:restart
