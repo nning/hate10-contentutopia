@@ -22,3 +22,10 @@ Reset Substitutions
 -------------------
 
     rake substitutions:reset
+
+Starting On Boot
+----------------
+
+Paste the following line at the end of `/etc/rc.local`:
+
+    su <user> -c "cd <app-dir> && rails s -b :: -d"
